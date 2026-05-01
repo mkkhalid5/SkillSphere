@@ -1,0 +1,45 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import logo from '@/assests/logo.png'
+
+const NavBar = () => {
+
+    return (
+        <div className='bg-base-100 shadow-sm'>
+            <div className="navbar container mx-auto px-3">
+                <div className="navbar-start">
+                    {/* <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                        </div>
+                        <ul
+                            tabIndex="-1"
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+
+                        </ul>
+                    </div> */}
+
+                    <div className='flex justify-center items-center gap-2'>
+                        <Image src={logo} alt={"SkillSphere"} width={40} height={40}></Image>
+                        <Link href={"/"}><h2 className='bg-gradient-to-r from-[#155DFC] to-[#9810FA] bg-clip-text text-transparent font-bold text-2xl'>SkillSphere</h2></Link>
+                    </div>
+
+                </div>
+                <div className="navbar-center hidden lg:flex text-2xl font-semibold">
+                    <ul className="menu menu-horizontal px-1 space-x-3">
+                        <Link href={"/"}><li>Home</li></Link>
+                        <Link href={"/allcourses"}><li>Courses</li></Link>
+                        <Link href={"/myprofile"}><li>My Profile</li></Link>
+                    </ul>
+                </div>
+                <div className="navbar-end space-x-3">
+                    <Link href={"/auth/login"}><button className='btn'>Login</button></Link>
+                    <Link href={"/auth/signup"}><button className='btn'>Register</button></Link>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default NavBar;
