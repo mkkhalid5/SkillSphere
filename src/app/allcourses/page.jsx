@@ -21,7 +21,7 @@ const AllCourses = () => {
 
 
     return (
-        <div className=''>
+        <div className='bg-gray-100'>
             <div className=' px-3 bg-linear-to-r from-[#155DFC] to-[#9810FA] py-15 text-center'>
                 <h2 className='text-white font-bold text-5xl'>Explore All Courses</h2>
                 <p className='text-white'>Discover your next learning adventure from our extensive course library</p>

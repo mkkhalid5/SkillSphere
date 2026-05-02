@@ -13,7 +13,8 @@ const CoursesDetails = async ({ params }) => {
     const courseDetails = await getCourseDetailsByID(id);
 
     return (
-        <div className='bg-slate-800 px-3 py-12 container mx-auto flex gap-8 justify-around'>
+        <div className='bg-slate-800'>
+        <div className=' px-3 py-12 container mx-auto flex flex-col-reverse md:flex-row gap-8 justify-around'>
             <div className='space-y-2'>
                 <div className='flex gap-3'>
                     <p className='bg-blue-500 px-1 rounded-lg text-white'>{courseDetails.category}</p>
@@ -50,6 +51,7 @@ const CoursesDetails = async ({ params }) => {
                     <p className='flex items-center gap-2 text-[#6A7282]'><TbCertificate2 className='text-blue-500'/> Certificate of completion</p>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
