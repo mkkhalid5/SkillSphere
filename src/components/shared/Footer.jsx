@@ -54,7 +54,7 @@ const Footer = () => {
             <hr className='text-[#D1D5DC] mt-8'/>
             <div className='flex justify-center items-center'>
                 
-                <h2 className='pt-8 pb-6 text-[#D1D5DC]'>© 2026 SkillSphere. All rights reserved. Made with ❤️ for learners worldwide.</h2>
+                <h2 className='pt-8 pb-6 text-[#D1D5DC]'>© 2026 SkillSphere. All rights reserved. Made by MK Khalid Mahamud</h2>
             </div>
         </div>
     );
