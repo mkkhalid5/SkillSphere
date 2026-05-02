@@ -13,11 +13,24 @@ const CoursesDetails = async ({ params }) => {
     const courseDetails = await getCourseDetailsByID(id);
 
     return (
-        <div className='bg-slate-300 px-3 py-12 container mx-auto flex gap-8 justify-between'>
-            <div>
+        <div className='bg-slate-800 px-3 py-12 container mx-auto flex gap-8 justify-around'>
+            <div className='space-y-2'>
                 <div className='flex gap-3'>
                     <p className='bg-blue-500 px-1 rounded-lg text-white'>{courseDetails.category}</p>
                     <p className='bg-purple-500 px-1 rounded-lg text-white'>{courseDetails.level}</p>
+                </div>
+                <h2 className='text-white text-4xl font-bold mt-10'>{courseDetails.title}</h2>
+                <p className='text-[#b9bec8]'>{courseDetails.description}</p>
+                <div className='text-[#b9bec8] flex gap-6'>
+                    <p>rating: {courseDetails.rating}</p>
+                    <p className='flex items-center gap-2'><FaClock /> {courseDetails.duration} hours</p>
+                </div>
+                <div className='mt-20 flex gap-4 items-center'>
+                    <Image src={courseDetails.image} alt={courseDetails.instructor} width={40} height={40} className='rounded-full' />
+                    <div>
+                        <p className='text-[#b9bec8]'>Created by</p>
+                        <h2 className='text-white'>{courseDetails.instructor}</h2>
+                    </div>
                 </div>
             </div>
 
