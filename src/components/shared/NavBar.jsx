@@ -54,7 +54,7 @@ const NavBar = () => {
                                 user ?
                                     <div className='flex gap-4'>
                                         <Image src={user?.image} alt={user?.name} height={40} width={40} className='rounded-full' />
-                                        <button className='btn bg-linear-to-r from-[#155DFC] to-[#9810FA]' onClick={async () => await authClient.signOut({
+                                        <button className='btn bg-linear-to-r from-[#155DFC] to-[#9810FA] text-white' onClick={async () => await authClient.signOut({
                                             fetchOptions: {
                                                 onSuccess: () => {
                                                     router.push("/");
