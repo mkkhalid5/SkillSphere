@@ -8,7 +8,7 @@ import { allCourses } from '@/lib/dataFetch';
 const PopularCourses = async () => {
     const courses = await allCourses();
     const popularCourses = [...courses].sort((a, b) => b.rating - a.rating).slice(0, 3);
-    console.log("pc:", popularCourses);
+    
     return (
         <div className='py-20 px-3 container mx-auto'>
             <h2 className='text-4xl font-bold text-center'>Popular Courses</h2>
