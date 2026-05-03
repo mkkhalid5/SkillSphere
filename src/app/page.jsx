@@ -1,3 +1,5 @@
+
+
 import Banner from '@/components/banner/Banner';
 import LearningTips from '@/components/LearningTips/LearningTips';
 import PopularCourses from '@/components/popularCourses/PopularCourses';
