@@ -27,7 +27,7 @@ const CoursesDetails = async ({ params }) => {
                     <p className='flex items-center gap-2'><FaClock /> {courseDetails.duration} hours</p>
                 </div>
                 <div className='mt-20 flex gap-4 items-center'>
-                    <Image src={courseDetails.image} alt={courseDetails.instructor} width={40} height={40} className='rounded-full' />
+                    <Image src={courseDetails.instructorImage} alt={courseDetails.instructor} width={40} height={40} className='rounded-full' />
                     <div>
                         <p className='text-[#b9bec8]'>Created by</p>
                         <h2 className='text-white'>{courseDetails.instructor}</h2>
@@ -37,14 +37,14 @@ const CoursesDetails = async ({ params }) => {
 
             <div className='bg-white rounded-lg shadow shadow-taupe-300 text-center space-y-2'>
                 <Image src={courseDetails.image} alt={courseDetails.title} width={400} height={300} className='w-full rounded-t-lg' />
-                <h2 className='bg-linear-to-r from-[#155DFC] to-[#9810FA] bg-clip-text text-transparent text-4xl font-bold'>$89.9</h2> 
+                <h2 className='bg-linear-to-r from-[#155DFC] to-[#9810FA] bg-clip-text text-transparent text-4xl font-bold'>${courseDetails.price}</h2> 
                 <p className='text-[#6A7282]'>One-time payment, lifetime access</p>
                 <div className='px-6'>
                     <button className='btn bg-linear-to-r from-[#155DFC] to-[#9810FA] rounded-md text-white w-full'>Enroll Now</button>
                 </div>
                 <div className='px-6 pb-4'>
                     <p className='flex items-center gap-2 text-[#6A7282]'><FaRegCirclePlay className='text-blue-500'/> {courseDetails.duration} hours video</p>
-                    <p className='flex items-center gap-2 text-[#6A7282]'><FaBookOpen className='text-blue-500'/> 77 lessons</p>
+                    <p className='flex items-center gap-2 text-[#6A7282]'><FaBookOpen className='text-blue-500'/> {courseDetails.lessons} lessons</p>
                     <p className='flex items-center gap-2 text-[#6A7282]'><IoMdDownload className='text-blue-500'/> Downloadable resources</p>
                     <p className='flex items-center gap-2 text-[#6A7282]'><CiMobile4 className='text-blue-500'/> Mobile & TV access</p>
                     <p className='flex items-center gap-2 text-[#6A7282]'><FaInfinity className='text-blue-500'/> Lifetime access</p>

@@ -18,7 +18,7 @@ const TopInstructors = async () => {
                     {
                         topInstructors.map((instructor) =>
                             <div key={instructor.id} className='shadow-lg rounded-2xl space-y-2 p-6 flex flex-col justify-center items-center bg-white'>
-                                <Image src={banner} alt={"ins"} width={96} height={90} className='rounded-full w-20 h-20' />
+                                <Image src={instructor.instructorImage} alt={"ins"} width={96} height={90} className='rounded-full w-20 h-20' />
                                 <h2 className='font-semibold'>{instructor.instructor}</h2>
                                 <p className='text-center text-[#4A5565]'>{instructor.title}</p>
                                 <p className='flex items-center text-[#4A5565] gap-2'>Rating: <FaStar className='text-yellow-500' /> {instructor.rating}</p>

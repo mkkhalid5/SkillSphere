@@ -30,7 +30,7 @@ const Trending = async () => {
                                                 <p className='flex items-center text-[#4A5565] gap-2'><FaStar className='text-yellow-500' /> {course.rating}</p>
                                                 <p className='flex items-center gap-2 text-[#4A5565]'><FaClock /> {course.duration} hours</p>
                                             </div>
-                                            <p className='bg-linear-to-r from-[#155DFC] to-[#9810FA] bg-clip-text text-transparent'>$100</p>
+                                            <p className='bg-linear-to-r from-[#155DFC] to-[#9810FA] bg-clip-text text-transparent'>${course.price}</p>
                                         </div>
 
                                         <Link href={`courses/${course.id}`}><button className='btn w-full bg-linear-to-r from-[#155DFC] to-[#9810FA] text-white mt-4'>View Details</button></Link>
