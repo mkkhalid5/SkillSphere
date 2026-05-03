@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { FaClock, FaSearch, FaStar } from 'react-icons/fa';
+import { motion } from "framer-motion";
 
 
 const AllCourses = () => {
@@ -65,7 +66,11 @@ const AllCourses = () => {
 
                             ) :
                             (
-                                <div className='mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 50 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                    className='mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
                                     {
                                         filteredCourses.map((courses) => {
                                             return (
@@ -90,7 +95,7 @@ const AllCourses = () => {
                                         }
                                         )
                                     }
-                                </div>
+                                </motion.div>
                             )
                     }
                 </div>

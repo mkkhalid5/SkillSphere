@@ -1,5 +1,5 @@
 import dns from "node:dns";
-dns.setServers(['8.8.8.8','8.8.4.4']);
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <ToastContainer />
         <NavBar></NavBar>
-        <main>{children}</main>
+        <main className="pt-20">{children}</main>
         <Footer></Footer>
       </body>
     </html>
