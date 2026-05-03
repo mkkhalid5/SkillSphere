@@ -63,8 +63,8 @@ const NavBar = () => {
                                         })}>Logout <FaArrowRight /></button>
                                     </div> :
                                     <div className='flex gap-4'>
-                                        <Link href={"/auth/login"} className={pathname === "/auth/login" ? "text-blue-600 font-bold" : ""}> <button className='btn'>Login</button></Link>
-                                        <Link href={"/auth/signup"} className={pathname === "/auth/signup" ? "text-blue-600 font-bold" : ""}><button className='btn'>Register</button></Link>
+                                        <Link href={"/auth/login"}> <button className={pathname === "/auth/login" ? "bg-blue-600 font-bold btn text-white" : "btn"}>Login</button></Link>
+                                        <Link href={"/auth/signup"} ><button className={pathname === "/auth/signup" ? "bg-blue-600 font-bold btn text-white" : "btn"}>Register</button></Link>
                                     </div>}
                         </div>
                         <div className="dropdown dropdown-end">
