@@ -3,11 +3,16 @@ import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
 const Signup = () => {
 
+    const handleGooleSignin = async () => {
+            const data = await authClient.signIn.social({
+                provider: "google"
+            })
+        }
     const { register,
         handleSubmit,
         formState: { errors } } = useForm();
@@ -83,6 +88,9 @@ const Signup = () => {
                     <button className='btn w-full bg-linear-to-r from-[#155DFC] to-[#9810FA] text-white'>Login</button>
                 </form>
                 <p>Already have an account? <Link href={"/auth/login"} className='text-blue-500 mt-4'>Login</Link></p>
+
+                 <button className='btn w-full mt-8' onClick={handleGooleSignin}><FaGoogle className='text-yellow-700'/> Login with google</button>
+                            
             </div>
         </div>
     );
