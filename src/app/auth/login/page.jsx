@@ -7,9 +7,11 @@ import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
 const Login = () => {
+
     const handleGooleSignin = async () => {
         const data = await authClient.signIn.social({
-            provider: "google"
+            provider: "google",
+            callbackURL: "/"
         })
     }
 
@@ -17,20 +19,20 @@ const Login = () => {
         handleSubmit,
         formState: { errors } } = useForm();
 
-        const [isShowPassword, setIsShowPassword] = useState(false)
+    const [isShowPassword, setIsShowPassword] = useState(false)
 
     const handleLoginFunc = async (data) => {
-        const {email, password} = data
-        const { data:user, error } = await authClient.signIn.email({
+        const { email, password } = data
+        const { data: user, error } = await authClient.signIn.email({
             email: email,
             password: password,
             rememberMe: true,
             callbackURL: "/",
         });
-        if(error){
+        if (error) {
             toast.error(error.message)
         }
-        if(user){
+        if (user) {
             toast.success("login Successfull")
         }
     }
@@ -56,14 +58,14 @@ const Login = () => {
                             className='input'
                             placeholder='Enter your password'
                             {...register("password", { required: "Password field is required" })} />
-                        <span className='absolute right-2 top-4 cursor-pointer' onClick={() => setIsShowPassword(!isShowPassword)}>{isShowPassword ? <FaEye />:<FaEyeSlash />}</span>
+                        <span className='absolute right-2 top-4 cursor-pointer' onClick={() => setIsShowPassword(!isShowPassword)}>{isShowPassword ? <FaEye /> : <FaEyeSlash />}</span>
                         {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                     </fieldset>
                     <button className='btn w-full bg-linear-to-r from-[#155DFC] to-[#9810FA] text-white'>Login</button>
                 </form>
                 <p>Don`t have an account? <Link href={"/auth/signup"} className='text-blue-500 mt-4'>Signup</Link></p>
 
-                <button className='btn w-full mt-8' onClick={handleGooleSignin}><FaGoogle className='text-yellow-700'/> Login with google</button>
+                <button className='btn w-full mt-8' onClick={handleGooleSignin}><FaGoogle className='text-yellow-700' /> Login with google</button>
             </div>
         </div>
     );

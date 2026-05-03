@@ -7,13 +7,9 @@ import React from 'react';
 
 const MyProfile = () => {
     const { data: session } = authClient.useSession();
+    const user = session?.user;
 
-    if (!session) {
-        redirect('/auth/login')
-    }
-    const user = session.user;
-    console.log("user", user);
-    const date = new Date(user.createdAt);
+    const date = new Date();
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
             <div className="bg-white shadow-md rounded-xl p-6 w-full max-w-md text-center">
