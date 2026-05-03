@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
+
 const Signup = () => {
 
     const handleGooleSignin = async () => {
