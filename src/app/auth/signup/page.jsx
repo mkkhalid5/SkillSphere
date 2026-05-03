@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
 
@@ -28,10 +29,10 @@ const Signup = () => {
         console.log("error",error);
 
         if(error){
-            alert(error.message)
+            toast(error.message)
         }
         if(user){
-            alert("Signup successfull")
+            toast("Signup successfull")
         }
     };
 

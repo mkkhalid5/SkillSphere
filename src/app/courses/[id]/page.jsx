@@ -8,9 +8,11 @@ import { FaRegCirclePlay } from 'react-icons/fa6';
 import { IoMdDownload } from 'react-icons/io';
 import { TbCertificate2 } from 'react-icons/tb';
 
+
 const CoursesDetails = async ({ params }) => {
     const { id } = await params;
     const courseDetails = await getCourseDetailsByID(id);
+
 
     return (
         <div className='bg-slate-800'>
