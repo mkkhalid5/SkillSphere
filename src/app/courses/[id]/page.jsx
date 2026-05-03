@@ -1,6 +1,5 @@
 import { getCourseDetailsByID } from '@/lib/dataFetch';
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import { CiMobile4 } from 'react-icons/ci';
 import { FaBookOpen, FaClock, FaInfinity, FaPlay, FaStar } from 'react-icons/fa';
