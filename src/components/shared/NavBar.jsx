@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import logo from '@/assests/logo.png'
+import { FaArrowRight } from 'react-icons/fa';
 
 const NavBar = () => {
     const handleClose = (e) => {
@@ -35,6 +36,8 @@ const NavBar = () => {
                 <div className="navbar-end space-x-3">
                     <Link href={"/auth/login"}><button className='btn'>Login</button></Link>
                     <Link href={"/auth/signup"}><button className='btn'>Register</button></Link>
+                    <Image src={logo} alt={"user"}  height={40} width={40} className='rounded-full'/>
+                    <Link href={"/auth/signup"}><button className='btn'>Logout <FaArrowRight /></button></Link>
                 </div>
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
